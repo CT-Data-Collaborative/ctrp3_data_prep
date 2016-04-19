@@ -1,0 +1,444 @@
+---
+v1:
+  version: 1
+  file_name:  clean_sub.csv
+  start_date: 10/1/2013
+  end_date: 9/30/2014
+  fields:
+    -
+      name: CreatedDate
+      input_type: str
+      output_type: str
+    -
+      name: ProfileNo
+      input_type: int
+      output_type: int
+    -
+      name: OrganizationIdentificationID
+      input_type: str
+      output_type: str
+    -
+      name: Department.Name
+      input_type: str
+      output_type: str
+    -
+      name: OrganizationActivityText
+      input_type: str
+      output_type: str
+    -
+      name: ReportingOfficerIdentificationID
+      input_type: int
+      output_type: int
+    -
+      name: InterventionIdentificationID
+      input_type: int
+      output_type: int
+    -
+      name: IdentificationCategoryDescriptionText
+      input_type: str
+      output_type: str
+    -
+      name: InterventionDate
+      input_type: dateInt
+      output_type: date
+    -
+      name: Day.of.Week
+      input_type: str
+      output_type: str
+      unique:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+    -
+      name: SubjectRaceCode
+      input_type: str
+      output_type: str
+      unique:
+        - W
+        - B
+        - A
+        - I
+    -
+      name: SubjectEthnicityCode
+      input_type: str
+      output_type: str
+      unique:
+        - H
+        - M
+        - "N"
+    -
+      name: SubjectSexCode
+      input_type: str
+      output_type: ~
+      unique:
+        - M
+        - F
+    -
+      name: SubjectAge
+      input_type: int
+      output_type: int
+      range:
+        high: 125
+        low: 0
+    -
+      name: ResidentIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: TownRecidentIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: InterventionLocationName
+      input_type: str
+      output_type: str
+    -
+      name: InterventionLocationDescriptionText
+      input_type: str
+      output_type: str
+    -
+      name: InterventionLocationLatitude
+      input_type: float
+      output_type: float
+    -
+      name: InterventionLocationLongitude
+      input_type: float
+      output_type: float
+    -
+      name: InterventionReasonCode
+      input_type: str
+      output_type: str
+    -
+      name: InterventionTechniqueCode
+      input_type: str
+      output_type: str
+    -
+      name: InterventionDurationCode
+      input_type: int
+      output_type: interval
+    -
+      name: TowedIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: StatuteCodeIdentificationID
+      input_type: str
+      output_type: str
+    -
+      name: StatutoryReasonForStop
+      input_type: str
+      output_type: str
+    -
+      name: StatutatoryCitationPostStop
+      input_type: str
+      output_type: str
+    -
+      name: VehicleSearchedIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: SearchAuthorizationCode
+      input_type: str
+      output_type: str
+    -
+      name: ContrabandIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: CustodialArrestIndicator
+      input_type: boolean
+      output_type: boolean
+    -
+      name: InterventionDispositionCode
+      input_type: str
+      output_type: str
+    -
+      name: InterventionDispositionDate
+      input_type: dateFloat
+      output_type: date
+    -
+      name: InterventionDispositionReasonText
+      input_type: str
+      output_type: str
+    -
+      name: IsStatuteCodeValid
+      input_type: boolean
+      output_type: boolean
+    -
+      name: IsStatutatoryCitationValid
+      input_type: boolean
+      output_type: boolean
+    -
+      name: IsaTest
+      input_type: boolean
+      output_type: boolean
+    -
+      name: RecordCount
+      input_type: int
+      output_type: int
+    -
+      name: SourceId
+      input_type: str
+      output_type: str
+    -
+      name: SourceReferenceId
+      input_type: int
+      output_type: int
+    -
+      name: InterventionDateTime
+      input_type: dateFloat
+      output_type: datetime
+    -
+      name: InterventionTime
+      input_type: timeFloat
+      output_type: time
+v2:
+  version: 2
+  file_name: cleaned_final.csv
+  org_map_name: orgs_v2.csv
+  start_date: 10/1/2014
+  end_date: 9/30/2015
+  fields:
+    -
+      name: CreatedDate
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: ProfileNo
+      input_type: int
+      output_type: int
+      db_field: drop
+    -
+      name: OrganizationIdentificationID
+      input_type: str
+      output_type: str
+      db_field: org
+    -
+      name: Department Name
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: OrganizationActivityText
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: ReportingOfficerIdentificationID
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionIdentificationID
+      input_type: str
+      output_type: str
+      db_field: intervention_id
+    -
+      name: IdentificationCategoryDescriptionText
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionDate
+      input_type: dateStringShort
+      output_type: date
+      db_field: drop
+    -
+      name: Month
+      input_type: str
+      output_type: str
+      db_field: drop
+      unique:
+        - October
+        - November
+        - December
+        - January
+        - February
+        - March
+        - April
+        - May
+        - June
+        - July
+        - August
+        - September
+    -
+      name: SubjectRaceCode
+      input_type: str
+      output_type: str
+      db_field: subject_race_code
+      unique:
+        - W
+        - B
+        - A
+        - I
+    -
+      name: SubjectEthnicityCode
+      input_type: str
+      output_type: str
+      db_field: subject_ethnicty_code
+      unique:
+        - H
+        - M
+        - N
+    -
+      name: SubjectSexCode
+      input_type: str
+      output_type: str
+      db_field: subject_sex_code
+      unique:
+        - M
+        - F
+    -
+      name: SubjectAge
+      input_type: int
+      output_type: int
+      db_field: subject_age
+      range:
+        high: 125
+        low: 0
+      out_of_range_value: null
+    -
+      name: ResidentIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: state_resident
+    -
+      name: TownRecidentIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: town_resident
+    -
+      name: InterventionLocationName
+      input_type: str
+      output_type: str
+      db_field: intervention_location
+    -
+      name: InterventionLocationDescriptionText
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionLocationLatitude
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionLocationLongitude
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionReasonCode
+      input_type: str
+      output_type: str
+      db_field: stop_reason_code
+    -
+      name: InterventionTechniqueCode
+      input_type: str
+      output_type: str
+      db_field: technique_code
+    -
+      name: InterventionDurationCode
+      input_type: int
+      output_type: interval
+      db_field: drop
+    -
+      name: TowedIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: towed
+    -
+      name: StatuteCodeIdentificationID
+      input_type: str
+      output_type: str
+      db_field: statute_id
+    -
+      name: StatuteReason
+      input_type: str
+      output_type: str
+      db_field: statuatory_reason_for_stop
+    -
+      name: StatutoryCitation
+      input_type: str
+      output_type: str
+      db_field: statuatory_citation_post_stop
+    -
+      name: VehicleSearchedIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: searched
+    -
+      name: SearchAuthorizationCode
+      input_type: str
+      output_type: str
+      db_field: search_authorization_code
+    -
+      name: ContrabandIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: contraband_found
+    -
+      name: CustodialArrestIndicator
+      input_type: boolean
+      output_type: boolean
+      db_field: custodial_arrest
+    -
+      name: InterventionDispositionCode
+      input_type: str
+      output_type: str
+      db_field: intervention_disposition_code
+    -
+      name: InterventionDispositionDate
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionDispositionReasonText
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: IsStatuteCodeValid
+      input_type: boolean
+      output_type: boolean
+      db_field: drop
+    -
+      name: IsStatutatoryCitationValid
+      input_type: boolean
+      output_type: boolean
+      db_field: drop
+    -
+      name: IsaTest
+      input_type: boolean
+      output_type: boolean
+      db_field: drop
+    -
+      name: RecordCount
+      input_type: int
+      output_type: int
+      db_field: drop
+    -
+      name: SourceId
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: SourceReferenceId
+      input_type: str
+      output_type: str
+      db_field: drop
+    -
+      name: InterventionDateTime
+      input_type: dateStringLong
+      output_type: datetime
+      db_field: intervention_datetime
+    -
+      name: InterventionTime
+      input_type: str
+      output_type: str
+      db_field: drop
