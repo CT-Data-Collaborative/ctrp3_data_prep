@@ -1,5 +1,5 @@
 ---
 schema_file: /Users/scuerda/Work/Projects/ctrp3_data_prep/schema/schema.yml
-version: v2
-raw_dir: /Users/scuerda/Work/Projects/ctrp3_data_prep/raw
-clean_dir: /Users/scuerda/Work/Projects/ctrp3_data_prep/clean
+version: r1
+raw_dir: /Users/scuerda/Work/Projects/ctrp3_data_prep/raw/r1
+clean_dir: /Users/scuerda/Work/Projects/ctrp3_data_prep/clean/r1

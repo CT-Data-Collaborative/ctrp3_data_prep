@@ -1,7 +1,7 @@
 ---
-v1:
+r1:
   version: 1
-  file_name:  clean_sub.csv
+  file_name: cleaned_final.csv
   start_date: 10/1/2013
   end_date: 9/30/2014
   fields:
@@ -9,54 +9,70 @@ v1:
       name: CreatedDate
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: ProfileNo
       input_type: int
       output_type: int
+      db_field: drop
     -
       name: OrganizationIdentificationID
       input_type: str
       output_type: str
+      db_field: org
     -
-      name: Department.Name
+      name: Department Name
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: OrganizationActivityText
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: ReportingOfficerIdentificationID
       input_type: int
       output_type: int
+      db_field: drop
     -
       name: InterventionIdentificationID
       input_type: int
       output_type: int
+      db_field: intervention_id
     -
       name: IdentificationCategoryDescriptionText
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: InterventionDate
-      input_type: dateInt
+      input_type: dateStringShort
       output_type: date
+      db_field: drop
     -
-      name: Day.of.Week
+      name: Month
       input_type: str
       output_type: str
+      db_field: drop
       unique:
-        - Monday
-        - Tuesday
-        - Wednesday
-        - Thursday
-        - Friday
-        - Saturday
-        - Sunday
+        - October
+        - November
+        - December
+        - January
+        - February
+        - March
+        - April
+        - May
+        - June
+        - July
+        - August
+        - September
     -
       name: SubjectRaceCode
       input_type: str
       output_type: str
+      db_field: subject_race_code
       unique:
         - W
         - B
@@ -66,6 +82,7 @@ v1:
       name: SubjectEthnicityCode
       input_type: str
       output_type: str
+      db_field: subject_ethnicity_code
       unique:
         - H
         - M
@@ -73,7 +90,8 @@ v1:
     -
       name: SubjectSexCode
       input_type: str
-      output_type: ~
+      output_type: str
+      db_field: subject_sex_code
       unique:
         - M
         - F
@@ -81,6 +99,7 @@ v1:
       name: SubjectAge
       input_type: int
       output_type: int
+      db_field: subject_aid
       range:
         high: 125
         low: 0
@@ -88,115 +107,143 @@ v1:
       name: ResidentIndicator
       input_type: boolean
       output_type: boolean
+      db_field: state_resident
     -
       name: TownRecidentIndicator
       input_type: boolean
       output_type: boolean
+      db_field: town_resident
     -
       name: InterventionLocationName
       input_type: str
       output_type: str
+      db_field: intervention_location
     -
       name: InterventionLocationDescriptionText
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: InterventionLocationLatitude
-      input_type: float
-      output_type: float
+      input_type: str
+      output_type: str
+      db_field: drop
     -
       name: InterventionLocationLongitude
-      input_type: float
-      output_type: float
+      input_type: str
+      output_type: str
+      db_field: drop
     -
       name: InterventionReasonCode
       input_type: str
       output_type: str
+      db_field: stop_reason_code
     -
       name: InterventionTechniqueCode
       input_type: str
       output_type: str
+      db_field: technique_code
     -
       name: InterventionDurationCode
       input_type: int
       output_type: interval
+      db_field: drop
     -
       name: TowedIndicator
       input_type: boolean
       output_type: boolean
+      db_field: towed
     -
       name: StatuteCodeIdentificationID
       input_type: str
       output_type: str
+      db_field: statute_id
     -
       name: StatutoryReasonForStop
       input_type: str
       output_type: str
+      db_field: statuatory_reason_for_stop
     -
       name: StatutatoryCitationPostStop
       input_type: str
       output_type: str
+      db_field: statuatory_citation_post_stop
     -
       name: VehicleSearchedIndicator
       input_type: boolean
       output_type: boolean
+      db_field: searched
     -
       name: SearchAuthorizationCode
       input_type: str
       output_type: str
+      db_field: search_authorization
     -
       name: ContrabandIndicator
       input_type: boolean
       output_type: boolean
+      db_field: contraband_found
     -
       name: CustodialArrestIndicator
       input_type: boolean
       output_type: boolean
+      db_field: custodial_arrest
     -
       name: InterventionDispositionCode
       input_type: str
       output_type: str
+      db_field: intervention_disposition_code
     -
       name: InterventionDispositionDate
-      input_type: dateFloat
-      output_type: date
+      input_type: str
+      output_type: str
+      db_field: drop
     -
       name: InterventionDispositionReasonText
       input_type: str
       output_type: str
+      db_field: drp[
     -
       name: IsStatuteCodeValid
       input_type: boolean
       output_type: boolean
+      db_field: drop
     -
       name: IsStatutatoryCitationValid
       input_type: boolean
       output_type: boolean
+      db_field: drop
     -
       name: IsaTest
       input_type: boolean
       output_type: boolean
+      db_field: drop
     -
       name: RecordCount
       input_type: int
       output_type: int
+      db_field: drop
     -
       name: SourceId
       input_type: str
       output_type: str
+      db_field: drop
     -
       name: SourceReferenceId
       input_type: int
       output_type: int
+      db_field: drop
     -
       name: InterventionDateTime
-      input_type: dateFloat
+      input_type: dateStringLong
       output_type: datetime
+      db_field: intervention_datetime
     -
       name: InterventionTime
-      input_type: timeFloat
-      output_type: time
-v2:
+      input_type: str
+      output_type: str
+      db_field: drop
+r2:
   version: 2
   file_name: cleaned_final.csv
   org_map_name: orgs_v2.csv
